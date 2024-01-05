@@ -1,0 +1,17 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = "noted"
+
+def flutterSdkPath = localProperties.getProperty('flutter.sdk')
+assert flutterSdkPath != null, "flutter.sdk not set in local.properties"
+includeBuild "$flutterSdkPath/packages/flutter_tools/gradle"
+
+// Now, apply the Flutter plugin
+includeBuild("${flutterSdkPath}/packages/flutter_tools/gradle")
+
